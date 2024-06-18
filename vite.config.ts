@@ -16,6 +16,7 @@ export default defineConfig({
     lib: {
       entry: "src/index.ts",
       name: "rcs",
+      formats: ["es", "cjs"],
     },
   },
 });
