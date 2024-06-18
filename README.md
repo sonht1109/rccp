@@ -11,6 +11,11 @@ This repository is made to learn how to build React component and also how to pu
 yarn add rccp
 ```
 
+Import `css` file into your `App.tsx`
+```bash
+import 'rccp/dist/style.css'
+```
+
 ### Available Components
 - LazyImage: lazy load image with fade animation
 - ToolTip
