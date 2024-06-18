@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "dist/rcs.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -34,7 +35,8 @@
     "storybook": "^8.1.10",
     "storybook-addon-react-docgen": "^1.2.44",
     "typescript": "^5.2.2",
-    "vite": "^5.2.0"
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.9.1"
   },
   "peerDependencies": {
     "react": ">=18.2.0",
