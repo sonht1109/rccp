@@ -1,7 +1,7 @@
 {
   "name": "rccp",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "dist/rcs.cjs",
   "module": "dist/rcs.js",
