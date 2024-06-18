@@ -1,0 +1,21 @@
+@prefix: rcs-Tooltip;
+
+.@{prefix} {
+  pointer-events: none;
+  display: inline-block;
+  white-space: nowrap;
+  position: fixed;
+  z-index: 999;
+
+  .@{prefix}__Animation {
+    transition: 0.2s;
+  }
+
+  .@{prefix}__Label {
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}

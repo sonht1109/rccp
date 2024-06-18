@@ -1,0 +1,87 @@
+@TRACK_HEIGHT: 3px;
+@PRIMARY_COLOR: #3f51b5;
+@TRACK_BG: #eeeeee;
+@BORDER_RADIUS: 4px;
+@SLIDER_THUMB_SIZE: 12px;
+@LABEL_COLOR: #3f51b5;
+@DISTANCE_FROM_LABEL_TO_TRACK: 20;
+@DISABLED_SLIDER_BG: #cccccc;
+
+@prefix: rcs-InputRange;
+
+.@{prefix} {
+  position: relative;
+  width: 100%;
+  height: @TRACK_HEIGHT;
+
+  &.disabled {
+    .@{prefix}__Track {
+      background-color: @DISABLED_SLIDER_BG;
+    }
+
+    .@{prefix}__SliderThumb {
+      background-color: @DISABLED_SLIDER_BG;
+    }
+  }
+
+  .@{prefix}__Track {
+    position: absolute;
+    background-color: @TRACK_BG;
+    border-radius: @BORDER_RADIUS*1px;
+    cursor: pointer;
+    left: 0;
+    right: 0;
+    @calc: @TRACK_HEIGHT / 2;
+    top: ~"calc(50% - @{calc})";
+    height: @TRACK_HEIGHT*1px;
+
+    .@{prefix}__TrackActive {
+      height: 100%;
+      border-radius: @BORDER_RADIUS*1px;
+      background-color: @PRIMARY_COLOR;
+      position: relative;
+      // transition: left 0.2s ease-out, width 0.2s ease-out;
+    }
+  }
+
+  .@{prefix}__Slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    // transition: left 0.2s ease-out;
+
+    .@{prefix}__SliderThumb {
+      outline: none;
+      border: none;
+      width: @SLIDER_THUMB_SIZE;
+      height: @SLIDER_THUMB_SIZE;
+      border-radius: 50%;
+      background-color: @PRIMARY_COLOR;
+      position: absolute;
+      top: 50%;
+      left: -50%;
+      transform: translate3d(-50%, -50%, 0);
+
+      &:active {
+        &:after {
+          transform: scale(2.5);
+        }
+      }
+
+      &:after {
+        content: "";
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: @SLIDER_THUMB_SIZE;
+        height: @SLIDER_THUMB_SIZE;
+        border-radius: 50%;
+        background-color: @PRIMARY_COLOR;
+        opacity: 0.3;
+        z-index: 0;
+        transition: 0.2s ease-out;
+      }
+    }
+  }
+}
